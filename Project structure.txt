@@ -1,0 +1,22 @@
+User Input (Part Name)
+        ↓
+Tier 1 → Fuzzy Match (RapidFuzz)            ---> utils/fuzzy_match.py
+        ↓
+Confidence Score (utils/confidence.py)
+        ↓
+If confidence > 85 → Accept                 ---> Show in Streamlit + update master (utils/update_master.py)
+If 60–85 → Send to GenAI                    ---> Tier 2
+If <60 → Manual Review                       ---> Tier 3 (utils/manual_review.py)
+        ↓
+Tier 2 → LLM Correction + Confidence       ---> utils/genai_correction.py
+        ↓
+If confident → Accept                        ---> update master
+Else → Manual Queue                          ---> utils/manual_review.py
+        ↓
+Tier 3 → Human Corrects                       ---> manual_review.py / Streamlit input
+        ↓
+Master List Updated                           ---> utils/update_master.py
+
+
+
+
