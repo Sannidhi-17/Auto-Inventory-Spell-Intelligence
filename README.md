@@ -42,8 +42,8 @@ User Input (Part Name)
 Tier 1 → Fuzzy Match (RapidFuzz)
         ↓
 If confidence > 85 → Accept
-If 60–85 → Send to GenAI
-If <60 → Manual Review
+If 20–85 → Send to GenAI
+If <20 → Manual Review
         ↓
 Tier 2 → LLM Correction + Confidence
         ↓
